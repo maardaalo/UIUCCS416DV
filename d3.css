@@ -1,0 +1,48 @@
+.content {
+    max-width: 900px;
+    margin: auto;
+    background-color:white;
+}
+
+path {
+    stroke: red;
+    stroke-width: 2.000001;
+    fill: none;
+}
+
+.ticks path {stroke:#a9a9a9;opacity:0.289}
+
+.overlay {
+    fill: none;
+    pointer-events: all;
+}
+
+.dot {
+    fill: black;
+    stroke: white;
+}
+
+
+.focus circle {
+    fill: none;
+    fill: red;
+}
+
+.focus text {
+    font-size: 12px;
+}
+
+.tooltip {
+    fill: white;
+    stroke: black;
+}
+
+.tooltip-date, .tooltip-likes {
+    font-weight: bold;
+}
+
+.line {
+    fill: none;
+    stroke: red;
+    stroke-width: 2.000001px;
+}

@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <title>CS 416 final project</title>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <link href="d3.css" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://rawgithub.com/Caged/d3-tip/master/examples/example-styles.css">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </head>
+
+<body style="background-color:black;" >
+    <div class="alert alert-warning">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        this ain't it chief
+    </div>
+
+    <div id="scene1" class="container-fluid" style="height:300px">
+        <div>
+            <p >
+                <h1><font color = "white">Scene 1. World wages and salaried employment distribution</font> </h1>
+                <font color = "white">This page shows how the worldwide salaried workers (percentage thereof), has changed between 2000 & 2019.</font><br/>
+                <font color = "white">As the graph shows, the percentage of salaried workers among the population, has been rising across the world, inversely this implies that the percentage of self-employed workers has been steadily decreasing since the turn of the millenium.</font><br/><br/>
+                <i><font color = "white">***Data is fetched from World Bank (the WDI API's) in realtime, instead of a pre-loaded CSV file.***</font></i><br/>
+            </p>
+            <p><div id="nxtscene2"><a href="#">Next Scene --></a></div></p>
+        </div>
+    </div>
+
+    <div id="scene2" class="container-fluid" style="display:none;height:300px">
+        <div>
+            <p>
+                <h1><font color = "white">Scene 2. Oh Say Can You See...</font></h1>
+                <font color = "white">This page shows the percentage of total employed workers, who are salaried, and its trend from 2000-2019, for USA.</font><br/>
+                <font color = "white">We can see that the percentage of average wage and salried workers in the US is way higher than the world average. It is also interesting to note that the percentage is higher for women than for men (Conversely also meaning that self employment rates are higher in men than in women).</font><br/><br/>
+                <font color = "white">At over 90 percent, the total, male and female percentages are nearly double the respective world averages.</font>
+            </p>
+            <p><div id="nxtscene3"><a href="#">Next Scene --></a></div></p>
+        </div>
+    </div>
+
+    <div id="scene3" class="container-fluid" style="display:none;height:300px">
+        <div>
+            <p>
+              <h1><font color = "white">Scene 3. In Mother Russia...</font ></h1>
+                <font color = "white">Russia on the other hand has historically held a completely opposite stance to the US in terms of economic policies (RE: Socialism and the State controlling all the resources).</font><br/>
+                <font color = "white">Consequently, one would be led to believe that the salaried employment figures would be different, but as we can see they are extremely similar to those of the US.</font><br/><br/>
+                <font color = "white">It would be interesting to see the results of adopting an economic policy that is halfway between the stances of US and Russia.</font>
+            </p>
+
+            <p><div id="nxtscene4"><a href="#">Next Scene --></a></div></p>
+        </div>
+    </div>
+
+    <div id="scene4" class="container-fluid" style="display:none;height:300px">
+        <div>
+            <p>
+              <h1><font color = "white">Scene 4. No half measures ... </font></h1>
+              <font color = "white">And that brings us to India, a country sort of famous for its Non-Aligned stance during the Cold War and its use of Soviet-like 5 year plans in the years immediately following independence and then the liberalised, capatilistic economy in the 1990's.</font><br/>
+              <font color = "white">While the rates have been steadily increasing, the extreme difference between the employment rates of men and women especially before 2010, is rather disconcerting. That being said it is heartening to see the increased equality in the employment rates, while maintaining a steady progress. </font><br/><br/>
+              <font color = "white">Based on evidence, India still has a long way to go, with its average figures being nearly 1/4 th the world average and nearly 1/6th the averages of US and Russia. Furthermore, further investigation is necessary into the figures because of the possibility of small-scale enterprises(self-employment), undocumented (daily and or unskilled) labor and straight up unemployment.</font>
+          </p>
+            <p><div id="nxtscene5"><a href="#">Next Scene --></a></div></p>
+        </div>
+    </div>
+
+   <div id="scene5" class="container-fluid" style="display:none;height:300px">
+        <div>
+            <p>
+                <h1><font color = "white">Scene 5. Yeah, but what about...</font></h1>
+                <font color = "white">If the user wants they can now look at different countries and gender distributions:</font>
+                <li><font color = "white">The user can now choose if they want to look at the situation of the male population, the female population or the whole population.</font></li>
+                <li><font color = "white">User can choose country from the drop down list below.</font></li>
+                <br/>
+               <font color = "white"> A new line will be added to the chart everytime a new nation or gender group is selected. </font>
+            </p>
+            <p><div id="startover"><a href="#"> Begin again </a></div></p>
+        </div>
+        <div>
+          <font color = "white">  Total <input type="radio" name="type" value="0" checked/>
+            Male <input type="radio" name="type" value="1"/>
+            Female <input type="radio"name="type" value="2"/></font >
+        </div>
+        <div id="country_select_container">
+
+        </div>
+    </div>
+
+    <div class="content">
+        <svg id="chart"></svg>
+    </div>
+
+    <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
+    <script src="supp.js" charset="utf-8"></script>
+    <script>
+        draw('WLD', false, 0);
+        draw('WLD', false, 1);
+        draw('WLD', false, 2);
+    </script>
+
+<div class="container-fluid" style="height:50px">
+  <font color = "white">  <strong style="color:green">green</strong> : total average, <strong style="color:blue">blue</strong>: male, and <strong style="color:magenta">magenta</strong>: female. </font > <br/>
+</div>
+
+<div class="container-fluid">
+    <h4 style="color:white">WDI indicator clarification:</h4>
+    <blockquote style="color:white">
+            The employment status indicator differentiates total employed population into two categories: (a) wage and salaried workers (also known as employees); and (b) self-employed workers. The self-employed workers are further divided into the following categories: (i) self-employed workers with employees (employers), (ii) self-employed workers without employees (own-account workers), (iii) members of producers' cooperatives and contributing family workers (also known as unpaid family workers). On a sidenote Vulnerable employment  is defined as the sum of contributing family workers and own-account workers. The data is part of the ILO estimates and is harmonized to ensure comparability across countries and over time by accounting for differences in data source, scope of coverage, methodology, and other country-specific factors. The estimates are based mainly on nationally representative labor force surveys, with other sources (population censuses and nationally reported estimates) used only when no survey data was available.
+    </blockquote>
+</div>
+
+</body>
+
+</html>
